@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#define UIInterfaceOrientationIsLandscapeOrPortrait(orientation)  ((orientation) == UIInterfaceOrientationPortrait  || (orientation) == UIDeviceOrientationPortraitUpsideDown || (orientation) == UIDeviceOrientationLandscapeLeft  || (orientation) == UIInterfaceOrientationLandscapeRight)
+
 @interface UIDevice (IVGUtils)
 
 - (NSString *)machine;

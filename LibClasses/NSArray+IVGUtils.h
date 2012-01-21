@@ -17,3 +17,9 @@
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
 @end
+
+@interface NSMutableArray (IGUtils)
+
+- (void) addIfNotNil:(id) item;
+
+@end

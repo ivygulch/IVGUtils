@@ -41,6 +41,10 @@
 		F8B9EB1F1336AC300087EE88 /* UIDevice+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B9EB1D1336AC300087EE88 /* UIDevice+IVGUtils.h */; };
 		F8B9EB201336AC310087EE88 /* UIDevice+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9EB1E1336AC300087EE88 /* UIDevice+IVGUtils.m */; };
 		F8B9EB421336D0FA0087EE88 /* UIDevice+IVGUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9EB3F1336D09B0087EE88 /* UIDevice+IVGUtilsTest.m */; };
+		F8D5601814CB3E08000E9E58 /* IVGImageScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D5601414CB3E08000E9E58 /* IVGImageScrollView.h */; };
+		F8D5601914CB3E08000E9E58 /* IVGImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D5601514CB3E08000E9E58 /* IVGImageScrollView.m */; };
+		F8D5601B14CB3E08000E9E58 /* UIToolbar+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D5601614CB3E08000E9E58 /* UIToolbar+IVGUtils.h */; };
+		F8D5601C14CB3E08000E9E58 /* UIToolbar+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D5601714CB3E08000E9E58 /* UIToolbar+IVGUtils.m */; };
 		F8D7E34213340019006A3686 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D7E34113340019006A3686 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +90,10 @@
 		F8B9EB1D1336AC300087EE88 /* UIDevice+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+IVGUtils.h"; sourceTree = "<group>"; };
 		F8B9EB1E1336AC300087EE88 /* UIDevice+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IVGUtils.m"; sourceTree = "<group>"; };
 		F8B9EB3F1336D09B0087EE88 /* UIDevice+IVGUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IVGUtilsTest.m"; sourceTree = "<group>"; };
+		F8D5601414CB3E08000E9E58 /* IVGImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGImageScrollView.h; sourceTree = "<group>"; };
+		F8D5601514CB3E08000E9E58 /* IVGImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGImageScrollView.m; sourceTree = "<group>"; };
+		F8D5601614CB3E08000E9E58 /* UIToolbar+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+IVGUtils.h"; sourceTree = "<group>"; };
+		F8D5601714CB3E08000E9E58 /* UIToolbar+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+IVGUtils.m"; sourceTree = "<group>"; };
 		F8D7E34113340019006A3686 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F8E05E6012E676A3008C09E5 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		F8E0602312E6822D008C09E5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
@@ -170,6 +178,10 @@
 		F89C62A312E935C300563E7B /* LibClasses */ = {
 			isa = PBXGroup;
 			children = (
+				F8D5601414CB3E08000E9E58 /* IVGImageScrollView.h */,
+				F8D5601514CB3E08000E9E58 /* IVGImageScrollView.m */,
+				F8D5601614CB3E08000E9E58 /* UIToolbar+IVGUtils.h */,
+				F8D5601714CB3E08000E9E58 /* UIToolbar+IVGUtils.m */,
 				F841D44614CB22BA000511FE /* IVGUtils.h */,
 				F841D44714CB22BA000511FE /* IVGUtils.m */,
 				F841D44814CB22BA000511FE /* UILabel+IVGUtils.h */,
@@ -247,6 +259,8 @@
 				F841D44C14CB22BA000511FE /* IVGUtils.h in Headers */,
 				F841D44E14CB22BA000511FE /* UILabel+IVGUtils.h in Headers */,
 				F841D45014CB22BA000511FE /* UIView+IVGUtils.h in Headers */,
+				F8D5601814CB3E08000E9E58 /* IVGImageScrollView.h in Headers */,
+				F8D5601B14CB3E08000E9E58 /* UIToolbar+IVGUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +355,8 @@
 				F841D44D14CB22BA000511FE /* IVGUtils.m in Sources */,
 				F841D44F14CB22BA000511FE /* UILabel+IVGUtils.m in Sources */,
 				F841D45114CB22BA000511FE /* UIView+IVGUtils.m in Sources */,
+				F8D5601914CB3E08000E9E58 /* IVGImageScrollView.m in Sources */,
+				F8D5601C14CB3E08000E9E58 /* UIToolbar+IVGUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

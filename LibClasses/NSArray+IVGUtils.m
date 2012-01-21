@@ -51,3 +51,13 @@
 }
 
 @end
+
+@implementation NSMutableArray (IGUtils)
+
+- (void) addIfNotNil:(id) item {
+    if (item) {
+        [self addObject:item];
+    }
+}
+
+@end
