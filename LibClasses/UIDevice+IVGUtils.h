@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define UIInterfaceOrientationIsLandscapeOrPortrait(orientation)  ((orientation) == UIInterfaceOrientationPortrait  || (orientation) == UIDeviceOrientationPortraitUpsideDown || (orientation) == UIDeviceOrientationLandscapeLeft  || (orientation) == UIInterfaceOrientationLandscapeRight)
+#define UIInterfaceOrientationIsLandscapeOrPortrait(orientation)  ((orientation) == UIInterfaceOrientationPortrait  || (orientation) == UIInterfaceOrientationPortraitUpsideDown || (orientation) == UIInterfaceOrientationLandscapeLeft  || (orientation) == UIInterfaceOrientationLandscapeRight)
 
 @interface UIDevice (IVGUtils)
 

@@ -12,7 +12,11 @@
 @interface NSManagedObjectContext (IVGUtils)
 
 - (id)insertNewEntityWithName:(NSString *)name;
+- (NSArray *)fetchObjectsForEntityName:(NSString *)newEntityName
+                         withPredicate:(id)stringOrPredicate;
 
-+ (NSManagedObjectContext *) managedObjectContextForDatastore:(NSURL *) storeUrl error:(NSError **) errorPointer;
++ (NSURL *) writeableDatabaseUrl:(NSString *) databaseName error:(NSError **) errorPointer;
++ (NSManagedObjectContext *) newManagedObjectContextForDatastore:(NSURL *) storeUrl error:(NSError **) errorPointer;
+
 
 @end

@@ -42,4 +42,17 @@
     return (value != nil) && ([value length] > 0);
 }
 
++ (void) showAlertViewTitle:(NSString *) title 
+                    message:(NSString *) message 
+                   delegate:(id<UIAlertViewDelegate>) delegate
+          cancelButtonTitle:(NSString *) cancelButtonTitle {
+    UIAlertView* alertView = [[UIAlertView alloc] 
+                              initWithTitle:title
+                              message:message
+                              delegate:delegate
+                              cancelButtonTitle:cancelButtonTitle
+                              otherButtonTitles:nil];
+    [alertView show];
+}
+
 @end

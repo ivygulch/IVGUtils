@@ -31,6 +31,29 @@
     return array;
 }
 
+- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue 
+{
+    if (index < [self count]) {
+        return [self objectAtIndex:index];
+    } else {
+        return outOfRangeValue;
+    }
+}
+
+- (NSString *) descriptionDelimitedBy:(NSString *) delimiter;
+{
+    NSMutableString *ms = [NSMutableString string];
+    NSString *sep = @"[";
+    for (id value in self) {
+        [ms appendString:sep];
+        [ms appendString:[NSString stringWithFormat:@"%@", value]];
+        sep = delimiter;
+    }
+    [ms appendString:@"]"];
+    return [NSString stringWithString:ms];
+}
+
+
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ...  {
     NSMutableArray *result = [NSMutableArray array];
     

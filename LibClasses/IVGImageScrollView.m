@@ -10,6 +10,7 @@
 
 @implementation IVGImageScrollView
 
+@synthesize imageView = imageView_;
 @synthesize index;
 @synthesize automaticMaximumScale = automaticMaximumScale_;
 @synthesize secondaryDelegate = secondaryDelegate_;
@@ -38,7 +39,7 @@
 - (void)dealloc
 {
     secondaryDelegate_ = nil;
-    [imageView release], imageView = nil;
+    [imageView_ release], imageView_ = nil;
 
     [super dealloc];
 }
@@ -115,14 +116,14 @@
     if(touches.count == 1) {  
         UITouch *touch =[touches anyObject];
         if([touch tapCount] == 2) {
-            [self handleDoubleTap:[touch locationInView:imageView]];
+            [self handleDoubleTap:[touch locationInView:self.imageView]];
         }
     } else if(touches.count == 2) {
         UITouch *touch =[touches anyObject];
         if ([touch tapCount] == 1) {
-            [self handleTwoFingerTap:[self averageLocationInView:imageView forTouches:touches]];
+            [self handleTwoFingerTap:[self averageLocationInView:self.imageView forTouches:touches]];
         } else if ([touch tapCount] == 2) {
-            [self handleTwoFingerDoubleTap:[self averageLocationInView:imageView forTouches:touches]];
+            [self handleTwoFingerDoubleTap:[self averageLocationInView:self.imageView forTouches:touches]];
         }
     }
 }
@@ -138,7 +139,7 @@
     // center the image as it becomes smaller than the size of the screen
     
     CGSize boundsSize = self.bounds.size;
-    CGRect frameToCenter = imageView.frame;
+    CGRect frameToCenter = self.imageView.frame;
     
     // center horizontally
     if (frameToCenter.size.width < boundsSize.width)
@@ -152,7 +153,7 @@
     else
         frameToCenter.origin.y = 0;
     
-    imageView.frame = frameToCenter;
+    self.imageView.frame = frameToCenter;
     
 }
 
@@ -161,7 +162,7 @@
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return imageView;
+    return self.imageView;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -236,22 +237,20 @@
 #pragma mark Configure scrollView to display new image (tiled or not)
 
 - (UIImage *) image {
-    return imageView.image;
+    return self.imageView.image;
 }
 
 - (void)setImage:(UIImage *)image
 {
     // clear the previous imageView
-    [imageView removeFromSuperview];
-    [imageView release];
-    imageView = nil;
+    [self.imageView removeFromSuperview];
     
     // reset our zoomScale to 1.0 before doing any further calculations
     self.zoomScale = 1.0;
     
     // make a new UIImageView for the new image
-    imageView = [[UIImageView alloc] initWithImage:image];
-    [self addSubview:imageView];
+    self.imageView = [[UIImageView alloc] initWithImage:image];
+    [self addSubview:self.imageView];
     
     self.contentSize = [image size];
     [self setMaxMinZoomScalesForCurrentBounds];
@@ -261,7 +260,7 @@
 - (void)setMaxMinZoomScalesForCurrentBounds
 {
     CGSize boundsSize = self.bounds.size;
-    CGSize imageSize = imageView.bounds.size;
+    CGSize imageSize = self.imageView.bounds.size;
     
     // calculate min/max zoomscale
     CGFloat xScale = boundsSize.width / imageSize.width;    // the scale needed to perfectly fit the image width-wise
@@ -289,7 +288,7 @@
 - (CGPoint)pointToCenterAfterRotation
 {
     CGPoint boundsCenter = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
-    return [self convertPoint:boundsCenter toView:imageView];
+    return [self convertPoint:boundsCenter toView:self.imageView];
 }
 
 // returns the zoom scale to attempt to restore after rotation. 
@@ -327,7 +326,7 @@
     // Step 2: restore center point, first making sure it is within the allowable range.
     
     // 2a: convert our desired center point back to our own coordinate space
-    CGPoint boundsCenter = [self convertPoint:oldCenter fromView:imageView];
+    CGPoint boundsCenter = [self convertPoint:oldCenter fromView:self.imageView];
     // 2b: calculate the content offset that would yield that center point
     CGPoint offset = CGPointMake(boundsCenter.x - self.bounds.size.width / 2.0, 
                                  boundsCenter.y - self.bounds.size.height / 2.0);

@@ -51,6 +51,32 @@
     }
 }
 
+- (void) setOriginYBelow:(UIView *) baseView withGap:(CGFloat) gap;
+{
+    if (!baseView || baseView.hidden) {
+        return; // do nothing
+    }
+    self.frame = (CGRect) {
+        {self.frame.origin.x, baseView.frame.origin.y + baseView.bounds.size.height + gap},
+        self.bounds.size
+    };
+}
+
+- (CGFloat) bottom;
+{
+    return self.frame.origin.y + self.bounds.size.height;
+}
+
+- (CGFloat) bottomOfLowestSubview;
+{
+    return [UIView bottomOfLowestView:self.subviews];
+}
+
+- (CGFloat) topOfHighestSubview;
+{
+    return [UIView topOfHighestView:self.subviews];
+}
+
 + (void) updateFrame:(UIView *) view x:(CGFloat) x {
     view.frame = (CGRect) {{x, view.frame.origin.y}, view.frame.size};
 }
@@ -58,5 +84,28 @@
 + (void) updateFrame:(UIView *) view w:(CGFloat) w {
     view.frame = (CGRect) {view.frame.origin, {w, view.frame.size.height}};
 }
+
++ (CGFloat) bottomOfLowestView:(NSArray *) views;
+{
+    CGFloat bottom = 0;
+    for (UIView *view in views) {
+        if (!view.hidden) {
+            bottom = MAX(bottom, [view bottom]);
+        }
+    }
+    return bottom;
+}
+
++ (CGFloat) topOfHighestView:(NSArray *) views;
+{
+    CGFloat top = CGFLOAT_MAX;
+    for (UIView *view in views) {
+        if (!view.hidden) {
+            top = MIN(top, view.frame.origin.y);
+        }
+    }
+    return (top == CGFLOAT_MAX) ? 0 : top;
+}
+
 
 @end

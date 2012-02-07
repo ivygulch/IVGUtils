@@ -20,6 +20,11 @@
 		F841D44F14CB22BA000511FE /* UILabel+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F841D44914CB22BA000511FE /* UILabel+IVGUtils.m */; };
 		F841D45014CB22BA000511FE /* UIView+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F841D44A14CB22BA000511FE /* UIView+IVGUtils.h */; };
 		F841D45114CB22BA000511FE /* UIView+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F841D44B14CB22BA000511FE /* UIView+IVGUtils.m */; };
+		F882D31114E1E35100EEBD61 /* IVGBlockMap.h in Headers */ = {isa = PBXBuildFile; fileRef = F882D30C14E1E35100EEBD61 /* IVGBlockMap.h */; };
+		F882D31214E1E35100EEBD61 /* IVGBlockMap.m in Sources */ = {isa = PBXBuildFile; fileRef = F882D30D14E1E35100EEBD61 /* IVGBlockMap.m */; };
+		F882D31314E1E35100EEBD61 /* IVGDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = F882D30E14E1E35100EEBD61 /* IVGDebug.h */; };
+		F882D31414E1E35100EEBD61 /* IVGPassthroughView.h in Headers */ = {isa = PBXBuildFile; fileRef = F882D30F14E1E35100EEBD61 /* IVGPassthroughView.h */; };
+		F882D31514E1E35100EEBD61 /* IVGPassthroughView.m in Sources */ = {isa = PBXBuildFile; fileRef = F882D31014E1E35100EEBD61 /* IVGPassthroughView.m */; };
 		F89C62BF12E936A900563E7B /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = F89C62BC12E936A900563E7B /* GHUnitIOSTestMain.m */; };
 		F89C62C912E937F700563E7B /* libIVGUtilsLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F89C62AA12E9364100563E7B /* libIVGUtilsLib.a */; };
 		F89C62D812E9382400563E7B /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E0602312E6822D008C09E5 /* libOCMock.a */; };
@@ -31,7 +36,6 @@
 		F89C641212E93A2A00563E7B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		F89C641312E93A2F00563E7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		F89C641412E93A3400563E7B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		F89C64A412E93E8300563E7B /* IVGDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = F89C64A312E93E8300563E7B /* IVGDebug.h */; };
 		F8B3657C13354FFF00878CB2 /* NSArray+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F8B3657A13354FFE00878CB2 /* NSArray+IVGUtils.h */; };
 		F8B3657D13354FFF00878CB2 /* NSArray+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3657B13354FFE00878CB2 /* NSArray+IVGUtils.m */; };
 		F8B365801335503300878CB2 /* NSArray+IVGUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3657F1335503300878CB2 /* NSArray+IVGUtilsTest.m */; };
@@ -76,11 +80,15 @@
 		F841D44914CB22BA000511FE /* UILabel+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+IVGUtils.m"; sourceTree = "<group>"; };
 		F841D44A14CB22BA000511FE /* UIView+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IVGUtils.h"; sourceTree = "<group>"; };
 		F841D44B14CB22BA000511FE /* UIView+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVGUtils.m"; sourceTree = "<group>"; };
+		F882D30C14E1E35100EEBD61 /* IVGBlockMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGBlockMap.h; sourceTree = "<group>"; };
+		F882D30D14E1E35100EEBD61 /* IVGBlockMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGBlockMap.m; sourceTree = "<group>"; };
+		F882D30E14E1E35100EEBD61 /* IVGDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGDebug.h; sourceTree = "<group>"; };
+		F882D30F14E1E35100EEBD61 /* IVGPassthroughView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGPassthroughView.h; sourceTree = "<group>"; };
+		F882D31014E1E35100EEBD61 /* IVGPassthroughView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGPassthroughView.m; sourceTree = "<group>"; };
 		F89C62AA12E9364100563E7B /* libIVGUtilsLib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGUtilsLib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89C62B112E9365C00563E7B /* IVGUtilsLibTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IVGUtilsLibTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F89C62BC12E936A900563E7B /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHUnitIOSTestMain.m; sourceTree = "<group>"; };
 		F89C62BD12E936A900563E7B /* IVGUtilsLibTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IVGUtilsLibTests-Info.plist"; sourceTree = "<group>"; };
-		F89C64A312E93E8300563E7B /* IVGDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGDebug.h; sourceTree = "<group>"; };
 		F8B3657A13354FFE00878CB2 /* NSArray+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSArray+IVGUtils.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		F8B3657B13354FFE00878CB2 /* NSArray+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSArray+IVGUtils.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		F8B3657F1335503300878CB2 /* NSArray+IVGUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+IVGUtilsTest.m"; sourceTree = "<group>"; };
@@ -144,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				F89C62A312E935C300563E7B /* LibClasses */,
-				F89C62A512E935E800563E7B /* LibResources */,
 				F89C62A412E935D700563E7B /* LibTests */,
 				F8E05E5F12E67682008C09E5 /* SharedOtherSources */,
 				F8E05FF512E681E1008C09E5 /* Libraries */,
@@ -178,6 +185,11 @@
 		F89C62A312E935C300563E7B /* LibClasses */ = {
 			isa = PBXGroup;
 			children = (
+				F882D30E14E1E35100EEBD61 /* IVGDebug.h */,
+				F882D30C14E1E35100EEBD61 /* IVGBlockMap.h */,
+				F882D30D14E1E35100EEBD61 /* IVGBlockMap.m */,
+				F882D30F14E1E35100EEBD61 /* IVGPassthroughView.h */,
+				F882D31014E1E35100EEBD61 /* IVGPassthroughView.m */,
 				F8D5601414CB3E08000E9E58 /* IVGImageScrollView.h */,
 				F8D5601514CB3E08000E9E58 /* IVGImageScrollView.m */,
 				F8D5601614CB3E08000E9E58 /* UIToolbar+IVGUtils.h */,
@@ -215,14 +227,6 @@
 			path = LibTests;
 			sourceTree = "<group>";
 		};
-		F89C62A512E935E800563E7B /* LibResources */ = {
-			isa = PBXGroup;
-			children = (
-				F89C64A312E93E8300563E7B /* IVGDebug.h */,
-			);
-			path = LibResources;
-			sourceTree = "<group>";
-		};
 		F8E05E5F12E67682008C09E5 /* SharedOtherSources */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,7 +253,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F89C64A412E93E8300563E7B /* IVGDebug.h in Headers */,
 				F822696B1333B20F001BF278 /* NSString+IVGUtils.h in Headers */,
 				F8B3657C13354FFF00878CB2 /* NSArray+IVGUtils.h in Headers */,
 				F8B3659E133554B600878CB2 /* NSSet+IVGUtils.h in Headers */,
@@ -261,6 +264,9 @@
 				F841D45014CB22BA000511FE /* UIView+IVGUtils.h in Headers */,
 				F8D5601814CB3E08000E9E58 /* IVGImageScrollView.h in Headers */,
 				F8D5601B14CB3E08000E9E58 /* UIToolbar+IVGUtils.h in Headers */,
+				F882D31114E1E35100EEBD61 /* IVGBlockMap.h in Headers */,
+				F882D31314E1E35100EEBD61 /* IVGDebug.h in Headers */,
+				F882D31414E1E35100EEBD61 /* IVGPassthroughView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +363,8 @@
 				F841D45114CB22BA000511FE /* UIView+IVGUtils.m in Sources */,
 				F8D5601914CB3E08000E9E58 /* IVGImageScrollView.m in Sources */,
 				F8D5601C14CB3E08000E9E58 /* UIToolbar+IVGUtils.m in Sources */,
+				F882D31214E1E35100EEBD61 /* IVGBlockMap.m in Sources */,
+				F882D31514E1E35100EEBD61 /* IVGPassthroughView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +402,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PROVISIONING_PROFILE = "61BD9747-A664-4924-BAD5-0E7C3585C1CF";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -426,6 +434,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = IVGUtilsLib;
 				SDKROOT = iphoneos;
 			};

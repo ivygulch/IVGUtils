@@ -11,12 +11,13 @@
 #define kIVGImageScrollView_TapZoomStep 1.5f
 
 @interface IVGImageScrollView : UIScrollView <UIScrollViewDelegate> {
-    UIImageView        *imageView;
+    UIImageView        *imageView_;
     NSUInteger     index;
     id<UIScrollViewDelegate> secondaryDelegate_;
     BOOL automaticMaximumScale_;
 }
 
+@property (nonatomic,retain) UIImageView *imageView;
 @property (assign) NSUInteger index;
 @property (nonatomic, assign, getter=isAutomaticMaximumScale) BOOL automaticMaximumScale;
 @property (nonatomic, retain) UIImage *image;

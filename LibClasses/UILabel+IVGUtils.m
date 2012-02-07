@@ -32,4 +32,21 @@
         self.text = [NSString stringWithFormat:@" \n%@",self.text];
 }
 
+- (void)setText:(NSString *) text adjustHeightUsingLineBreakMode:(UILineBreakMode) lineBreakMode {
+    // calculate new size, but all we really want is the height
+    CGSize originalSize = self.bounds.size;
+    CGSize newSize = [text sizeWithFont:self.font constrainedToSize:originalSize lineBreakMode:lineBreakMode];
+
+    // reset the existing frame to newly calculated size and ask label to sizeToFit
+    self.frame = (CGRect){self.frame.origin,{self.bounds.size.width,newSize.height}};
+    self.numberOfLines = 0;
+    self.lineBreakMode = lineBreakMode;
+    self.text = text;
+    [self sizeToFit];
+    
+    // sizeToFit will also change the width, change it back since if the label is used again
+    // (like in a table view cell), the starting point for the next time will be wrong
+    self.frame = (CGRect){self.frame.origin,{originalSize.width,self.bounds.size.height}};
+}
+
 @end

@@ -13,6 +13,8 @@
 
 - (NSArray *) randomized;
 - (NSArray *) reversedArray;
+- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue;
+- (NSString *) descriptionDelimitedBy:(NSString *) delimiter;
 
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 

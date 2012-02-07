@@ -14,4 +14,8 @@
 
 - (BOOL) haveValue;
 
+- (NSString *) trimAllLeading:(NSString *) value;
+- (NSString *) trimAllTrailing:(NSString *) value;
+- (NSString *) trimMatchingLeadingTrailing:(NSString *) value;
+
 @end

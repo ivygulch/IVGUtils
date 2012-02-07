@@ -6,7 +6,7 @@
 //  Copyright 2011 Ivy Gulch, LLC. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface IVGUtils : NSObject
 
@@ -16,5 +16,10 @@
 
 + (id) ifNil:(id) value use:(id) defaultValue;
 + (BOOL) haveValue:(NSString *) value;
+
++ (void) showAlertViewTitle:(NSString *) title 
+                    message:(NSString *) message 
+                   delegate:(id<UIAlertViewDelegate>) delegate
+          cancelButtonTitle:(NSString *) cancelButtonTitle;
 
 @end
