@@ -13,7 +13,7 @@
 
 - (NSArray *) randomized {
     NSMutableArray *arrayCopy = [NSMutableArray arrayWithArray:self];
-    NSMutableArray *result = [[[NSMutableArray alloc] initWithCapacity:[self count]] autorelease];
+    NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[self count]];
     while ([arrayCopy count] > 0) {
         int idx = arc4random() % [arrayCopy count];
         [result addObject:[arrayCopy objectAtIndex:idx]];
@@ -66,7 +66,7 @@
             key = [key substringFromIndex:1];
             ascending = NO;
         }
-        [result addObject:[[[NSSortDescriptor alloc] initWithKey:key ascending:ascending] autorelease]];
+        [result addObject:[[NSSortDescriptor alloc] initWithKey:key ascending:ascending]];
     }
     va_end(args);
     

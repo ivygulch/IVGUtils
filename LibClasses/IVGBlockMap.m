@@ -10,62 +10,38 @@
 
 @interface IVGBlockMap()
 
-@property (retain) NSMutableDictionary *blockMap;
+@property (strong) NSMutableDictionary *blockMap;
 // allow map to handle nil block values by substituting a simple object
 // for the block reference (value) in the map. NULL_BLOCK is that shared object.
-@property (retain) id NULL_BLOCK; 
+@property (strong) id NULL_BLOCK;
 
 @end
 
 @implementation IVGBlockMap
 
-@synthesize blockMap = blockMap_;
-@synthesize NULL_BLOCK = NULL_BLOCK_;
-
 - (id) init;
 {
     if ((self = [super init])) {
-        blockMap_ = [[NSMutableDictionary alloc] init];
-        NULL_BLOCK_ = [[NSObject alloc] init];
+        _blockMap = [[NSMutableDictionary alloc] init];
+        _NULL_BLOCK = [[NSObject alloc] init];
     }
     return self;
 }
 
-- (void) dealloc;
-{
-    // do a block release on any remaining blocks in the map
-    for (id key in [blockMap_ keyEnumerator]) {
-        id blockRef = [blockMap_ objectForKey:key];
-        if (blockRef != NULL_BLOCK_) {
-            id block = [blockRef pointerValue];
-            Block_release(block);
-        }
-    }
-    [blockMap_ release], blockMap_ = nil;
-    [NULL_BLOCK_ release], NULL_BLOCK_ = nil;
-
-    [super dealloc];
-}
-
 - (void) setBlock:(id) block forKey:(id) key;
 {
-    [self removeBlockForKey:key]; // remove any existing block so the copy gets released properly
-    
     id blockRef;
     if(block == nil){ 
         blockRef = self.NULL_BLOCK;
     } else { 
-        blockRef = Block_copy(block);
+        blockRef = block;
     }
     [self.blockMap setObject:blockRef forKey:key];
 }
 
 - (void) removeBlockForKey:(id) key;
 {
-    id block = [self blockForKey:key];
-    if (block != nil) {
-        Block_release(block);
-    }
+    [self.blockMap removeObjectForKey:key];
 }
 
 - (id) blockForKey:(id) key;

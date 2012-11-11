@@ -21,7 +21,7 @@
                  widthInset:(CGFloat) inset
                   textColor:(UIColor *) textColor
                 shadowColor:(UIColor *) shadowColor {
-    UILabel *result = [[[UILabel alloc] init] autorelease];
+    UILabel *result = [[UILabel alloc] init];
     result.font = font;
     result.backgroundColor = [UIColor clearColor];
     result.textColor = textColor;

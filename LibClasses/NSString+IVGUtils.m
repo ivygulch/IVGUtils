@@ -10,22 +10,12 @@
 
 @implementation NSString(IVGUtils)
 
-+ (NSString *) GUID {
++ (NSString *) UUID {
     // create a new UUID which you own
     CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
     
-    // create a new CFStringRef (toll-free bridged to NSString)
-    // that you own
-    NSString *uuidString = (NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
-    
-    // transfer ownership of the string
-    // to the autorelease pool
-    [uuidString autorelease];
-    
-    // release the UUID
-    CFRelease(uuid);
-    
-    return uuidString;
+    // return a new CFStringRef (toll-free bridged to NSString) that we own
+    return (NSString *)CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault, uuid));
 }
 
 - (BOOL) haveValue {

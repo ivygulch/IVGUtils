@@ -10,7 +10,7 @@
 
 @interface NSString (IVGUtils)
 
-+ (NSString *) GUID;
++ (NSString *) UUID;
 
 - (BOOL) haveValue;
 

@@ -15,7 +15,7 @@
     NSMutableDictionary *dictionary = [[NSThread currentThread] threadDictionary];
     NSDateFormatter *sharedDateFormatter = [dictionary objectForKey:@"sharedDateFormatter"];
     if (!sharedDateFormatter) {
-        sharedDateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+        sharedDateFormatter = [[NSDateFormatter alloc] init];
         sharedDateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"UTC"];
         [dictionary setObject:sharedDateFormatter forKey:@"sharedDateFormatter"];
     }

@@ -17,17 +17,9 @@
 
 @implementation NSString_IVGUtilsTest
 
-- (void) testGUIDRetain {
-    NSString *guid = [[NSString GUID] retain];
-    
-    GHAssertEquals([guid retainCount], (NSUInteger) 2, @"guid is created with autorelease, so after a retain, retainCount should be 2");
-
-    [guid release];
-}
-
-- (void) testGUIDUniqueness {
-    NSString *guid1 = [NSString GUID];
-    NSString *guid2 = [NSString GUID];
+- (void) testUUIDUniqueness {
+    NSString *guid1 = [NSString UUID];
+    NSString *guid2 = [NSString UUID];
     GHAssertNotEquals(guid1, guid2, @"guid strings should be unique");
 }
 

@@ -10,11 +10,6 @@
 
 @implementation IVGImageScrollView
 
-@synthesize imageView = imageView_;
-@synthesize index;
-@synthesize automaticMaximumScale = automaticMaximumScale_;
-@synthesize secondaryDelegate = secondaryDelegate_;
-
 - (void) setupInstance {
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
@@ -34,14 +29,6 @@
 
 - (void) awakeFromNib {
     [self setupInstance];
-}
-
-- (void)dealloc
-{
-    secondaryDelegate_ = nil;
-    [imageView_ release], imageView_ = nil;
-
-    [super dealloc];
 }
 
 #pragma mark -
