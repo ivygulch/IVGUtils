@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://github.com/ivygulch/IVGUtils"
   s.license      = { :type => 'MIT', :file => 'LICENSE'}
   s.author       = { "dwsjoquist" => "dwsjoquist@sunetos.com"}
-  s.source       = { :git => "https://github.com/ivygulch/IVGDownloadManager.git" }
+  s.source       = { :git => "https://github.com/ivygulch/IVGUtils.git" }
   s.platform     = :ios, '5.0'
   s.source_files = 'IVGUtils/LibClasses'
   s.frameworks   = 'Foundation','UIKit','CoreData','CoreGraphics'
