@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "dwsjoquist" => "dwsjoquist@sunetos.com"}
   s.source       = { :git => "https://github.com/ivygulch/IVGUtils.git" }
   s.platform     = :ios, '5.0'
-  s.source_files = 'IVGUtils/LibClasses/*{.h,.m}'
+  s.source_files = 'LibClasses/*{.h,.m}'
   s.frameworks   = 'Foundation','UIKit','CoreData','CoreGraphics'
   s.requires_arc = true
 end
