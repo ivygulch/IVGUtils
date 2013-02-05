@@ -48,7 +48,6 @@
 		F8D5601914CB3E08000E9E58 /* IVGImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D5601514CB3E08000E9E58 /* IVGImageScrollView.m */; };
 		F8D5601B14CB3E08000E9E58 /* UIToolbar+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D5601614CB3E08000E9E58 /* UIToolbar+IVGUtils.h */; };
 		F8D5601C14CB3E08000E9E58 /* UIToolbar+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D5601714CB3E08000E9E58 /* UIToolbar+IVGUtils.m */; };
-		F8D7E34213340019006A3686 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D7E34113340019006A3686 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +76,8 @@
 		F841D44914CB22BA000511FE /* UILabel+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+IVGUtils.m"; sourceTree = "<group>"; };
 		F841D44A14CB22BA000511FE /* UIView+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+IVGUtils.h"; sourceTree = "<group>"; };
 		F841D44B14CB22BA000511FE /* UIView+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVGUtils.m"; sourceTree = "<group>"; };
+		F857ED3416C09477008851A2 /* IVGUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IVGUtils.podspec; sourceTree = "<group>"; };
+		F857ED3516C0952D008851A2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F882D30C14E1E35100EEBD61 /* IVGBlockMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGBlockMap.h; sourceTree = "<group>"; };
 		F882D30D14E1E35100EEBD61 /* IVGBlockMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGBlockMap.m; sourceTree = "<group>"; };
 		F882D30E14E1E35100EEBD61 /* IVGDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGDebug.h; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		F8D5601514CB3E08000E9E58 /* IVGImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGImageScrollView.m; sourceTree = "<group>"; };
 		F8D5601614CB3E08000E9E58 /* UIToolbar+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIToolbar+IVGUtils.h"; sourceTree = "<group>"; };
 		F8D5601714CB3E08000E9E58 /* UIToolbar+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIToolbar+IVGUtils.m"; sourceTree = "<group>"; };
-		F8D7E34113340019006A3686 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F8E05E6012E676A3008C09E5 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		F8E0602312E6822D008C09E5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		F8E0602712E68242008C09E5 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
@@ -112,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D7E34213340019006A3686 /* CoreData.framework in Frameworks */,
 				F89C641212E93A2A00563E7B /* UIKit.framework in Frameworks */,
 				F89C641312E93A2F00563E7B /* Foundation.framework in Frameworks */,
 				F89C641412E93A3400563E7B /* CoreGraphics.framework in Frameworks */,
@@ -149,6 +148,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				F857ED3416C09477008851A2 /* IVGUtils.podspec */,
+				F857ED3516C0952D008851A2 /* LICENSE */,
 				F89321B316506198008F88D6 /* Default-568h@2x.png */,
 				F89C62A312E935C300563E7B /* LibClasses */,
 				F89C62A412E935D700563E7B /* LibTests */,
@@ -163,10 +164,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F8B3658A1335518F00878CB2 /* CoreData.framework */,
-				F8D7E34113340019006A3686 /* CoreData.framework */,
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				F8B3658A1335518F00878CB2 /* CoreData.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
@@ -310,7 +310,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Ivy Gulch, LLC";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "IVGUtils" */;
