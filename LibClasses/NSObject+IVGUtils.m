@@ -6,7 +6,7 @@
 //  Copyright 2012 Ivy Gulch, LLC. All rights reserved.
 //
 
-#import "NSObject+ILAUtils.h"
+#import "NSObject+IVGUtils.h"
 #import <objc/runtime.h>
 
 @implementation NSObject (IVGUtils)
