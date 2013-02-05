@@ -78,6 +78,7 @@
 		F841D44B14CB22BA000511FE /* UIView+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+IVGUtils.m"; sourceTree = "<group>"; };
 		F857ED3416C09477008851A2 /* IVGUtils.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IVGUtils.podspec; sourceTree = "<group>"; };
 		F857ED3516C0952D008851A2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F857ED3616C095C8008851A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F882D30C14E1E35100EEBD61 /* IVGBlockMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGBlockMap.h; sourceTree = "<group>"; };
 		F882D30D14E1E35100EEBD61 /* IVGBlockMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGBlockMap.m; sourceTree = "<group>"; };
 		F882D30E14E1E35100EEBD61 /* IVGDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGDebug.h; sourceTree = "<group>"; };
@@ -148,8 +149,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				F857ED3416C09477008851A2 /* IVGUtils.podspec */,
-				F857ED3516C0952D008851A2 /* LICENSE */,
+				F857ED3716C095D5008851A2 /* info */,
 				F89321B316506198008F88D6 /* Default-568h@2x.png */,
 				F89C62A312E935C300563E7B /* LibClasses */,
 				F89C62A412E935D700563E7B /* LibTests */,
@@ -179,6 +179,16 @@
 				F89C62BC12E936A900563E7B /* GHUnitIOSTestMain.m */,
 			);
 			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F857ED3716C095D5008851A2 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				F857ED3616C095C8008851A2 /* README.md */,
+				F857ED3416C09477008851A2 /* IVGUtils.podspec */,
+				F857ED3516C0952D008851A2 /* LICENSE */,
+			);
+			name = info;
 			sourceTree = "<group>";
 		};
 		F89C62A312E935C300563E7B /* LibClasses */ = {
