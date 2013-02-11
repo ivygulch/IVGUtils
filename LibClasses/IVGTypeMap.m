@@ -39,6 +39,16 @@
     return (value == nil) ? NSNotFound : [value integerValue];
 }
 
+- (void) typeForDescription:(NSString *) description withSuccessBlock:(IVGTypeMapSuccessBlock) successBlock;
+{
+    if (description != nil) {
+        NSInteger type = [self typeForDescription:description];
+        if (type != NSNotFound) {
+            successBlock(type);
+        }
+    }
+}
+
 - (NSString *) descriptionForType:(NSInteger) type;
 {
     return [self.typeToDescription objectForKey:@(type)];
