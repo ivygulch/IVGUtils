@@ -25,5 +25,6 @@
 @interface NSMutableArray (IGUtils)
 
 - (void) addIfNotNil:(id) item;
+- (void) addObject:(id)anObject ifBlock:(BOOL(^)(id anObject)) ifBlock;
 
 @end

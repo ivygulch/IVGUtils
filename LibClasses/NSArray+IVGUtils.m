@@ -94,4 +94,11 @@
     }
 }
 
+- (void) addObject:(id)anObject ifBlock:(BOOL(^)(id anObject)) ifBlock;
+{
+    if (ifBlock(anObject)) {
+        [self addObject:anObject];
+    }
+}
+
 @end
