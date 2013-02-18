@@ -88,17 +88,19 @@
 
 @implementation NSMutableArray (IGUtils)
 
-- (void) addIfNotNil:(id) item {
-    if (item) {
-        [self addObject:item];
-    }
+- (BOOL) addIfNotNil:(id) item;
+{
+    return [self addObject:item ifBlock:^BOOL(id obj){return obj != nil;}];
 }
 
-- (void) addObject:(id)anObject ifBlock:(BOOL(^)(id anObject)) ifBlock;
+- (BOOL) addObject:(id)item ifBlock:(BOOL(^)(id obj)) ifBlock;
 {
-    if (ifBlock(anObject)) {
-        [self addObject:anObject];
+    BOOL result = NO;
+    if (ifBlock(item)) {
+        [self addObject:item];
+        result = YES;
     }
+    return result;
 }
 
 @end
