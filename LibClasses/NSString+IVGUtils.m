@@ -90,4 +90,18 @@
     return [NSString stringWithCString:b encoding:NSUTF8StringEncoding];
 }
 
+- (NSString *) stringWithOnlyCharacters:(NSString *) validCharacters;
+{
+    NSUInteger len = [self length];
+    NSMutableString *result = [NSMutableString stringWithCapacity:len];
+    for (NSUInteger idx=0; idx<len; idx++) {
+        NSString *c = [self substringWithRange:NSMakeRange(idx,1)];
+        NSRange r = [validCharacters rangeOfString:c];
+        if (r.length > 0) {
+            [result appendString:c];
+        }
+    }
+    return [NSString stringWithString:result];
+}
+
 @end

@@ -19,5 +19,6 @@
 - (NSString *) trimMatchingLeadingTrailing:(NSString *) value;
 
 + (NSString *) binaryStringWithInteger:(int32_t) x bitCount:(NSUInteger) bitCount leftPad:(BOOL) leftPad;
+- (NSString *) stringWithOnlyCharacters:(NSString *) validCharacters;
 
 @end
