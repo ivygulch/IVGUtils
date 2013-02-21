@@ -14,6 +14,7 @@
 - (id) findSuperviewIsKindOfClass: (Class) clazz;
 - (void) logSizes:(NSString *) desc;
 - (void) removeAllGestureRecognizers;
+- (void) removeAllSubviews;
 - (void) setOriginYBelow:(UIView *) baseView withGap:(CGFloat) gap;
 - (CGFloat) bottom;
 - (CGFloat) bottomOfLowestSubview;

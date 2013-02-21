@@ -51,6 +51,14 @@
     }
 }
 
+- (void) removeAllSubviews;
+{
+    NSArray *subviews = [NSArray arrayWithArray:self.subviews];
+    for (UIView *subview in subviews) {
+        [subview removeFromSuperview];
+    }
+}
+
 - (void) setOriginYBelow:(UIView *) baseView withGap:(CGFloat) gap;
 {
     if (!baseView || baseView.hidden) {

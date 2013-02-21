@@ -95,4 +95,10 @@
     return [self stringWithFormat:format timeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
 }
 
+- (NSTimeInterval) timeIntervalSinceMidnight;
+{
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:NSHourCalendarUnit|NSMinuteCalendarUnit fromDate:self];
+    return dateComponents.hour * 24 + dateComponents.minute;
+}
+
 @end

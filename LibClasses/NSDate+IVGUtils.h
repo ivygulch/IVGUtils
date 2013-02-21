@@ -23,4 +23,6 @@
 - (NSString *) stringWithFormat:(NSString *) format;
 - (NSString *) utcStringWithFormat:(NSString *) format;
 
+- (NSTimeInterval) timeIntervalSinceMidnight;
+
 @end
