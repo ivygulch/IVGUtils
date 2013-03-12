@@ -16,6 +16,7 @@
 - (BOOL) isLimitedMachine;
 
 + (BOOL) isRunningOniPad;
++ (BOOL) isRunningOnSimulator;
 + (BOOL) isPortrait;
 + (BOOL) isLandscape;
 + (UIDeviceOrientation) deviceOrientation;

@@ -76,6 +76,11 @@
 	return isRunningOniPad;
 }
 
++ (BOOL) isRunningOnSimulator;
+{
+    return [[[UIDevice currentDevice] machine] hasPrefix:@"i386"];
+}
+
 + (BOOL) isPortrait {
     return UIDeviceOrientationIsPortrait([UIDevice deviceOrientation]);
 }
