@@ -59,6 +59,8 @@
 		F8AE34F916C4B21B005A2965 /* NSDate+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8AE34F716C4B21B005A2965 /* NSDate+IVGUtils.m */; };
 		F8B365801335503300878CB2 /* NSArray+IVGUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3657F1335503300878CB2 /* NSArray+IVGUtilsTest.m */; };
 		F8B9EB421336D0FA0087EE88 /* UIDevice+IVGUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9EB3F1336D09B0087EE88 /* UIDevice+IVGUtilsTest.m */; };
+		F8FB7D8116EFD75900E1BA92 /* UIImage+IVGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = F8FB7D7F16EFD75900E1BA92 /* UIImage+IVGUtils.h */; };
+		F8FB7D8216EFD75900E1BA92 /* UIImage+IVGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FB7D8016EFD75900E1BA92 /* UIImage+IVGUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		F8E0602312E6822D008C09E5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		F8E0602712E68242008C09E5 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
 		F8E0604B12E68261008C09E5 /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OCMock.framework; sourceTree = "<group>"; };
+		F8FB7D7F16EFD75900E1BA92 /* UIImage+IVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+IVGUtils.h"; sourceTree = "<group>"; };
+		F8FB7D8016EFD75900E1BA92 /* UIImage+IVGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+IVGUtils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,8 @@
 				F8AE34D816C4B178005A2965 /* UIToolbar+IVGUtils.m */,
 				F8AE34D916C4B178005A2965 /* UIView+IVGUtils.h */,
 				F8AE34DA16C4B178005A2965 /* UIView+IVGUtils.m */,
+				F8FB7D7F16EFD75900E1BA92 /* UIImage+IVGUtils.h */,
+				F8FB7D8016EFD75900E1BA92 /* UIImage+IVGUtils.m */,
 				F837142616EFA45500E5EFCC /* NSFileManager+IVGUtils.h */,
 				F837142716EFA45500E5EFCC /* NSFileManager+IVGUtils.m */,
 			);
@@ -310,6 +316,7 @@
 				F89A0AA416C5AE8F008FE433 /* IVGTypeMap.h in Headers */,
 				F89CA33816C9A49200916F42 /* NSDictionary+IVGUtils.h in Headers */,
 				F837142816EFA45500E5EFCC /* NSFileManager+IVGUtils.h in Headers */,
+				F8FB7D8116EFD75900E1BA92 /* UIImage+IVGUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +420,7 @@
 				F89A0AA516C5AE8F008FE433 /* IVGTypeMap.m in Sources */,
 				F89CA33916C9A49200916F42 /* NSDictionary+IVGUtils.m in Sources */,
 				F837142916EFA45500E5EFCC /* NSFileManager+IVGUtils.m in Sources */,
+				F8FB7D8216EFD75900E1BA92 /* UIImage+IVGUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
