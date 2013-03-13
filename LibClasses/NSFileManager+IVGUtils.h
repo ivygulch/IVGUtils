@@ -13,5 +13,6 @@
 - (NSDate *) timestampForFilePath:(NSString *) filePath error:(NSError **) error;
 - (BOOL) setTimestamp:(NSDate *) timestamp forFilePath:(NSString *) filePath error:(NSError **) error;
 - (BOOL) resetTimestampForFilePath:(NSString *) filePath error:(NSError **) error;
+- (BOOL) ensureDirectoryExistsForFilePath:(NSString *) filePath error:(NSError **) error;
 
 @end

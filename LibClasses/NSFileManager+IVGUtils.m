@@ -45,4 +45,22 @@
     return [self setTimestamp:[NSDate distantPast] forFilePath:filePath error:error];
 }
 
+- (BOOL) ensureDirectoryExistsForFilePath:(NSString *) filePath error:(NSError **) error;
+{
+    BOOL needMkdir = NO;
+    BOOL isDir;
+    if ([self fileExistsAtPath:filePath isDirectory:&isDir]) {
+        if (!isDir) {
+            [self removeItemAtPath:filePath error:nil];
+            needMkdir = YES;
+        }
+    } else {
+        needMkdir = YES;
+    }
+    if (needMkdir) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:error];
+    }
+    return needMkdir;
+}
+
 @end
