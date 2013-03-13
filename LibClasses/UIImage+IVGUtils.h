@@ -10,6 +10,8 @@
 
 @interface UIImage (IVGUtils)
 
+- (UIImage *) scaleToSize:(CGSize) size;
+- (UIImage *) scale:(CGFloat) scale;
 + (UIImage *) imageNamed:(NSString *)name inDirectory:(NSString *) directory;
 
 @end
