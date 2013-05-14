@@ -6,7 +6,7 @@
 //  Copyright 2011 Ivy Gulch, LLC. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface NSArray (IVGUtils)
 
@@ -19,7 +19,6 @@
 
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
-- (UIColor *) UIColorFromRGBValues;
 
 @end
 

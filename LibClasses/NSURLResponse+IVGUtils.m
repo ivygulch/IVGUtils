@@ -26,9 +26,7 @@ static NSString * const kLastModifiedTimestampFormat = @"EEE',' dd MMM yyyy HH':
 {
     NSDictionary *headers = [self allHTTPHeaderFields];
     NSString *lastModifiedStr = [headers objectForKey:@"Last-Modified"];
-    NSDate *result = [NSDate utcDateFromString:lastModifiedStr withFormat:kLastModifiedTimestampFormat];
-//    if (lastModifiedStr != nil) NSLog(@"lastModified: %@ -> %@", lastModifiedStr, result);
-    return result;
+    return [NSDate dateFromString:lastModifiedStr withFormat:kLastModifiedTimestampFormat];
 }
 
 - (NSUInteger) httpStatusCode;

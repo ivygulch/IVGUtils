@@ -84,16 +84,6 @@
     return result;
 }
 
-- (UIColor *) UIColorFromRGBValues;
-{
-    CGFloat r = [[self objectAtIndex:0 outOfRange:nil] floatValue];
-    CGFloat g = [[self objectAtIndex:1 outOfRange:nil] floatValue];
-    CGFloat b = [[self objectAtIndex:2 outOfRange:nil] floatValue];
-    CGFloat a = [[self objectAtIndex:3 outOfRange:@(1)] floatValue];
-
-    return [UIColor colorWithRed:r green:g blue:b alpha:a];
-}
-
 @end
 
 @implementation NSMutableArray (IGUtils)
