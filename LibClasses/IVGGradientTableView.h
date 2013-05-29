@@ -1,5 +1,5 @@
 //
-//  UIColor+IVGUtils.h
+//  IVGGradientTableView.h
 //  IVGUtils
 //
 //  Created by Douglas Sjoquist on 4/17/13.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (IVGUtils)
+@interface IVGGradientTableView : UITableView
 
-- (UIColor *) colorWithBrightnessFactor:(CGFloat) factor;
+@property (nonatomic,strong) NSArray *colors UI_APPEARANCE_SELECTOR;
 
 @end

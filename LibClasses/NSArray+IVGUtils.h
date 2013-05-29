@@ -10,12 +10,12 @@
 
 @interface NSArray (IVGUtils)
 
-- (NSArray *) randomized;
-- (NSArray *) reversedArray;
-- (NSArray *) filterArray:(BOOL (^)(id element)) filterBlock;
-
+- (NSArray *) arrayByRandomizing;
+- (NSArray *) arrayByReversing;
+- (NSArray *) arrayByTransforming:(id(^)(id)) transformationBlock;
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue;
 - (NSString *) descriptionDelimitedBy:(NSString *) delimiter;
+- (NSString *) stringWithPrefix:(NSString *) prefix delimiter:(NSString *) delimiter suffix:(NSString *) suffix;
 
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ... NS_REQUIRES_NIL_TERMINATION;
 
@@ -28,3 +28,7 @@
 - (BOOL) addObject:(id)anObject ifBlock:(BOOL(^)(id anObject)) ifBlock;
 
 @end
+
+
+
+

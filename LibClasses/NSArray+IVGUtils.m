@@ -11,7 +11,7 @@
 
 @implementation NSArray (IVGUtils)
 
-- (NSArray *) randomized {
+- (NSArray *) arrayByRandomizing {
     NSMutableArray *arrayCopy = [NSMutableArray arrayWithArray:self];
     NSMutableArray *result = [[NSMutableArray alloc] initWithCapacity:[self count]];
     while ([arrayCopy count] > 0) {
@@ -22,7 +22,7 @@
     return result;
 }
 
-- (NSArray *) reversedArray {
+- (NSArray *) arrayByReversing {
     NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
     NSEnumerator *enumerator = [self reverseObjectEnumerator];
     for (id element in enumerator) {
@@ -31,16 +31,15 @@
     return array;
 }
 
-- (NSArray *) filterArray:(BOOL (^)(id element)) filterBlock;
+- (NSArray *) arrayByTransforming:(id(^)(id)) transformationBlock;
 {
-    NSMutableArray *result = [NSMutableArray array];
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (filterBlock(obj)) {
-            [result addObject:obj];
-        }
-    }];
-    return [NSArray arrayWithArray:result];
+    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+    for (id originalValue in self) {
+        [array addObject:transformationBlock(originalValue)];
+    }
+    return array;
 }
+
 
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue
 {
@@ -53,21 +52,30 @@
 
 - (NSString *) descriptionDelimitedBy:(NSString *) delimiter;
 {
+    return [self stringWithPrefix:@"[" delimiter:delimiter suffix:@"]"];
+}
+
+- (NSString *) stringWithPrefix:(NSString *) prefix delimiter:(NSString *) delimiter suffix:(NSString *) suffix;
+{
     NSMutableString *ms = [NSMutableString string];
-    NSString *sep = @"[";
+    if (prefix != nil) {
+        [ms appendString:prefix];
+    }
+    NSString *sep = @"";
     for (id value in self) {
         [ms appendString:sep];
         [ms appendString:[NSString stringWithFormat:@"%@", value]];
         sep = delimiter;
     }
-    [ms appendString:@"]"];
+    if (suffix != nil) {
+        [ms appendString:suffix];
+    }
     return [NSString stringWithString:ms];
 }
 
-
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ...  {
     NSMutableArray *result = [NSMutableArray array];
-    
+
     va_list args;
     va_start(args, firstKey);
     for (NSString *arg = firstKey; arg != nil; arg = va_arg(args, NSString*)) {
@@ -80,7 +88,7 @@
         [result addObject:[[NSSortDescriptor alloc] initWithKey:key ascending:ascending]];
     }
     va_end(args);
-    
+
     return result;
 }
 

@@ -12,7 +12,7 @@
 @implementation NSOrderedSet (IVGUtils)
 
 - (NSArray *) randomizedArray {
-    return [[self array] randomized];
+    return [[self array] arrayByRandomizing];
 }
 
 - (NSOrderedSet *) randomizedOrderedSet;

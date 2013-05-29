@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NSArray* CGColorArray(NSArray *colors);
+
 @interface IVGUtils : NSObject
 
 + (NSDateFormatter *) sharedDateFormatter;

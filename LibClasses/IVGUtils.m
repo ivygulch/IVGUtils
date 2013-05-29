@@ -7,6 +7,14 @@
 //
 
 #import "IVGUtils.h"
+#import "NSArray+IVGUtils.h"
+#import <QuartzCore/QuartzCore.h>
+
+NSArray* CGColorArray(NSArray *colors) {
+    return [colors arrayByTransforming:^(id color) {
+        return (id) [color CGColor];
+    }];
+}
 
 @implementation IVGUtils
 

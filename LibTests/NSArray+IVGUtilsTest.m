@@ -30,7 +30,7 @@
 
     NSMutableDictionary *resultCounts = [NSMutableDictionary dictionary];
     for (int idx=0; idx<1000; idx++) {
-        NSArray *randomized = [original randomized];
+        NSArray *randomized = [original arrayByRandomizing];
         NSString *randomizedResult = [self result:randomized];
         NSNumber *count = [resultCounts valueForKey:randomizedResult];
         if (count) {
