@@ -108,8 +108,8 @@
 - (BOOL) backing_highlighted;
 {
     BOOL result = NO;
-    if ([self respondsToSelector:@selector(highlighted)]) {
-        result = [[self performSelector:@selector(highlighted)] boolValue];
+    if ([self respondsToSelector:@selector(isHighlighted)]) {
+        result = [(id)self isHighlighted];
     }
     return result;
 }
