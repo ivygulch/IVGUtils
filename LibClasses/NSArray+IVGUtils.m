@@ -40,6 +40,16 @@
     return array;
 }
 
+- (NSArray *) arrayByFiltering:(BOOL (^)(id element)) filterBlock;
+{
+    NSMutableArray *result = [NSMutableArray array];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (filterBlock(obj)) {
+            [result addObject:obj];
+        }
+    }];
+    return [NSArray arrayWithArray:result];
+}
 
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue
 {

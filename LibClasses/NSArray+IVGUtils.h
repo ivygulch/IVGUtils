@@ -13,6 +13,7 @@
 - (NSArray *) arrayByRandomizing;
 - (NSArray *) arrayByReversing;
 - (NSArray *) arrayByTransforming:(id(^)(id)) transformationBlock;
+- (NSArray *) arrayByFiltering:(BOOL (^)(id element)) filterBlock;
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue;
 - (NSString *) descriptionDelimitedBy:(NSString *) delimiter;
 - (NSString *) stringWithPrefix:(NSString *) prefix delimiter:(NSString *) delimiter suffix:(NSString *) suffix;
