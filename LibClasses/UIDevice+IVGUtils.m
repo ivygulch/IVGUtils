@@ -37,25 +37,6 @@
     return machine;
 }
 
-- (BOOL) isLimitedMachine {
-    NSString *m = [self machine];
-    
-    if ([m hasPrefix:@"iPhone1"]) {
-        return YES;
-    } else if ([m hasPrefix:@"iPhone2"]) {
-        return YES;
-    } else if ([m hasPrefix:@"iPod1"]) {
-        return YES;
-    } else if ([m hasPrefix:@"iPod2"]) {
-        return YES;
-    } else if ([m hasPrefix:@"i386"]) { 
-        // for testing, need to switch this back and forth
-        return NO; 
-    } else {
-        return NO;
-    }
-}
-
 + (BOOL) isRunningOniPad {
 	static BOOL hasCheckediPadStatus = NO;
 	static BOOL isRunningOniPad = NO;
@@ -78,7 +59,8 @@
 
 + (BOOL) isRunningOnSimulator;
 {
-    return [[[UIDevice currentDevice] machine] hasPrefix:@"i386"];
+    NSString *machine = [[UIDevice currentDevice] machine];
+    return [machine hasPrefix:@"i386"] || [machine hasPrefix:@"x86"];
 }
 
 + (BOOL) isPortrait {

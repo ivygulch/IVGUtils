@@ -13,7 +13,6 @@
 @interface UIDevice (IVGUtils)
 
 - (NSString *)machine;
-- (BOOL) isLimitedMachine;
 
 + (BOOL) isRunningOniPad;
 + (BOOL) isRunningOnSimulator;
