@@ -10,7 +10,7 @@
 
 @implementation NSFileManager (IVGUtils)
 
-- (NSDate *) timestampForFilePath:(NSString *) filePath error:(NSError **) error;
+- (NSDictionary *) fileAttributesForFilePath:(NSString *) filePath error:(NSError **) error;
 {
     if ((filePath == nil) || ![self fileExistsAtPath:filePath]) {
         if (error != nil) {
@@ -19,11 +19,27 @@
         return nil;
     }
 
-    NSDictionary *fileAttributes = [self attributesOfItemAtPath:filePath error:error];
+    return [self attributesOfItemAtPath:filePath error:error];
+}
+
+- (NSDate *) timestampForFilePath:(NSString *) filePath error:(NSError **) error;
+{
+    NSDictionary *fileAttributes = [self fileAttributesForFilePath:filePath error:error];
     if (fileAttributes == nil) {
         return nil;
     } else {
         return [fileAttributes objectForKey:NSFileModificationDate];
+    }
+}
+
+- (NSDate *) regularFileTimestampForFilePath:(NSString *) filePath error:(NSError **) error;
+{
+    NSDictionary *fileAttributes = [self fileAttributesForFilePath:filePath error:error];
+    NSString *fileType = [fileAttributes objectForKey:NSFileType];
+    if ([fileType isEqualToString:NSFileTypeRegular]) {
+        return [fileAttributes objectForKey:NSFileModificationDate];
+    } else {
+        return nil;
     }
 }
 
