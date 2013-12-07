@@ -50,12 +50,12 @@ static NSString *ASSOCIATED_USER_INFO_ASSOCOBJ_KEY = @"com.ivygulch.ASSOCIATED_U
     }
 }
 
-- (CGFloat) associatedFloatValueForKey:(id) key;
+- (float) associatedFloatValueForKey:(id) key;
 {
     return [[self associatedUserInfoObjectForKey:key] floatValue];
 }
 
-- (void) setAssociatedFloatValue:(CGFloat) value forKey:(id) key;
+- (void) setAssociatedFloatValue:(float) value forKey:(id) key;
 {
     return [self setAssociatedUserInfoObject:[NSNumber numberWithFloat:value] forKey:key];
 }

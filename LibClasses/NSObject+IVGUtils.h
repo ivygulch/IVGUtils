@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
 
 @interface NSObject (IVGUtils)
 
@@ -16,8 +15,8 @@
 - (BOOL) haveAssociatedUserInfoObjectForKey:(id) key;
 - (id) associatedUserInfoObjectForKey:(id) key;
 - (void) setAssociatedUserInfoObject:(id) object forKey:(id) key;
-- (CGFloat) associatedFloatValueForKey:(id) key;
-- (void) setAssociatedFloatValue:(CGFloat) value forKey:(id) key;
+- (float) associatedFloatValueForKey:(id) key;
+- (void) setAssociatedFloatValue:(float) value forKey:(id) key;
 - (NSString *) debugId;
 
 @end
