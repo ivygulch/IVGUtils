@@ -1,6 +1,6 @@
 //
 //  UIColor+IVGUtils.m
-//  IVGUtils
+//  MyFactor
 //
 //  Created by Douglas Sjoquist on 4/17/13.
 //  Copyright (c) 2013 Ivy Gulch, LLC. All rights reserved.

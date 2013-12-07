@@ -161,6 +161,20 @@ static NSString *VIEW_OWNER_ASSOCOBJ_KEY = @"com.ivygulch.VIEW_OWNER_KEY";
     return nil;
 }
 
+- (UIView *) findFirstResponderInView:(UIView*) view
+{
+    if (view.isFirstResponder) {
+        return view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIView *result = [subview findFirstResponderInView:subview];
+        if (result) {
+            return result;
+        }
+    }
+    return nil;
+}
+
 - (id) viewOwnerFor:(UIView *) view;
 {
     return objc_getAssociatedObject(view, (__bridge const void *) VIEW_OWNER_ASSOCOBJ_KEY);
@@ -444,6 +458,62 @@ static NSString *VIEW_OWNER_ASSOCOBJ_KEY = @"com.ivygulch.VIEW_OWNER_KEY";
 - (void) setFrameHeight:(CGFloat)frameHeight;
 {
     self.frameSize = CGSizeMake(self.frame.size.width,frameHeight);
+}
+
+#pragma mark - frameBottom & frameRight are easier ways to change margin
+
+- (CGFloat) frameLeft;
+{
+    return self.frame.origin.x;
+}
+
+- (void) setFrameLeft:(CGFloat)frameLeft;
+{
+    CGFloat x = self.frame.origin.x;
+    CGFloat w = self.frame.size.width;
+    CGFloat diff = (frameLeft - x);
+    self.frame = CGRectMake(frameLeft,self.frame.origin.y,w-diff,self.frame.size.height);
+}
+
+- (CGFloat) frameRight;
+{
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+- (void) setFrameRight:(CGFloat)frameRight;
+{
+    CGFloat x = self.frame.origin.x;
+    CGFloat w = self.frame.size.width;
+    CGFloat right = x + w;
+    CGFloat diff = (frameRight - right);
+    self.frame = CGRectMake(x,self.frame.origin.y,w+diff,self.frame.size.height);
+}
+
+- (CGFloat) frameTop;
+{
+    return self.frame.origin.y;
+}
+
+- (void) setFrameTop:(CGFloat)frameTop;
+{
+    CGFloat y = self.frame.origin.y;
+    CGFloat h = self.frame.size.height;
+    CGFloat diff = (frameTop - y);
+    self.frame = CGRectMake(self.frame.origin.x,frameTop,self.frame.size.width,h-diff);
+}
+
+- (CGFloat) frameBottom;
+{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (void) setFrameBottom:(CGFloat)frameBottom;
+{
+    CGFloat y = self.frame.origin.y;
+    CGFloat h = self.frame.size.height;
+    CGFloat bottom = y + h;
+    CGFloat diff = (frameBottom - bottom);
+    self.frame = CGRectMake(self.frame.origin.x,y,self.frame.size.width,h+diff);
 }
 
 @end

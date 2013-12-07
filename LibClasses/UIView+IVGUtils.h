@@ -39,6 +39,11 @@ typedef enum UIViewHorizontalAlignment UIViewHorizontalAlignment;
 @property (nonatomic,assign) CGFloat frameWidth;
 @property (nonatomic,assign) CGFloat frameHeight;
 
+@property (nonatomic,assign) CGFloat frameLeft;
+@property (nonatomic,assign) CGFloat frameRight;
+@property (nonatomic,assign) CGFloat frameTop;
+@property (nonatomic,assign) CGFloat frameBottom;
+
 - (NSString *) superviewDescription;
 - (id) findFirstViewInHierarchyWithKindOfClass: (Class) clazz;
 - (void) logSizes:(NSString *) desc;
@@ -58,6 +63,7 @@ typedef enum UIViewHorizontalAlignment UIViewHorizontalAlignment;
 + (id) findFirstViewInHiearchyWith:(id) item kindOfClass: (Class) clazz;
 
 - (UIView *) findFirstResponder;
+- (UIView *) findFirstResponderInView:(UIView*) view;
 
 - (void) positionSubview:(UIView *) view horizontalAlignment:(UIViewHorizontalAlignment) horizontalAlignment verticalAlignment:(UIViewVerticalAlignment) verticalAlignment width:(CGFloat) width height:(CGFloat) height;
 - (void) positionSubview:(UIView *) view horizontalAlignment:(UIViewHorizontalAlignment) horizontalAlignment verticalAlignment:(UIViewVerticalAlignment) verticalAlignment;

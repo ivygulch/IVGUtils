@@ -40,18 +40,8 @@
     return array;
 }
 
-- (NSArray *) arrayByFiltering:(BOOL (^)(id element)) filterBlock;
-{
-    NSMutableArray *result = [NSMutableArray array];
-    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (filterBlock(obj)) {
-            [result addObject:obj];
-        }
-    }];
-    return [NSArray arrayWithArray:result];
-}
 
-- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue
+- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue 
 {
     if (index < [self count]) {
         return [self objectAtIndex:index];
@@ -85,7 +75,7 @@
 
 + (NSArray *) sortDescriptors:(NSString *)firstKey, ...  {
     NSMutableArray *result = [NSMutableArray array];
-
+    
     va_list args;
     va_start(args, firstKey);
     for (NSString *arg = firstKey; arg != nil; arg = va_arg(args, NSString*)) {
@@ -98,7 +88,7 @@
         [result addObject:[[NSSortDescriptor alloc] initWithKey:key ascending:ascending]];
     }
     va_end(args);
-
+    
     return result;
 }
 
@@ -106,19 +96,10 @@
 
 @implementation NSMutableArray (IGUtils)
 
-- (BOOL) addIfNotNil:(id) item;
-{
-    return [self addObject:item ifBlock:^BOOL(id obj){return obj != nil;}];
-}
-
-- (BOOL) addObject:(id)item ifBlock:(BOOL(^)(id obj)) ifBlock;
-{
-    BOOL result = NO;
-    if (ifBlock(item)) {
+- (void) addIfNotNil:(id) item {
+    if (item) {
         [self addObject:item];
-        result = YES;
     }
-    return result;
 }
 
 @end

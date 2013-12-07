@@ -24,7 +24,7 @@
 }
 
 - (void) check:(NSString *) s expectHaveValue:(BOOL) expectHaveValue {
-    BOOL actualHaveValue = [s haveValue];
+    BOOL actualHaveValue = [s hasValue];
     GHAssertEquals(actualHaveValue, expectHaveValue, @"string is %@", s);
 }
 
@@ -43,7 +43,7 @@
 - (void) testHaveValueWithChars {
     [self check:@"abc" expectHaveValue:YES];
 }
-
+/*
 - (void) checkValue:(int32_t) value bitCount:(NSUInteger) bitCount leftPad:(BOOL) leftPad expected:(NSString *) expected;
 {
     NSString *actual = [NSString binaryStringWithInteger:value bitCount:bitCount leftPad:leftPad];
@@ -74,6 +74,6 @@
 {
     [self checkValue:0 bitCount:32 leftPad:NO expected:@"0"];
 }
-
+*/
 @end
 

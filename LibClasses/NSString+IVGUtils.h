@@ -12,13 +12,14 @@
 
 + (NSString *) UUID;
 
-- (BOOL) haveValue;
+- (BOOL) hasValue;
 
+- (NSString *) removeCharactersInSet:(NSCharacterSet *) characterSet;
+- (NSString *) trim;
 - (NSString *) trimAllLeading:(NSString *) value;
 - (NSString *) trimAllTrailing:(NSString *) value;
 - (NSString *) trimMatchingLeadingTrailing:(NSString *) value;
 
-+ (NSString *) binaryStringWithInteger:(int32_t) x bitCount:(NSUInteger) bitCount leftPad:(BOOL) leftPad;
-- (NSString *) stringWithOnlyCharacters:(NSString *) validCharacters;
+- (BOOL) matches:(NSString *) searchText;
 
 @end

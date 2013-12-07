@@ -7,14 +7,7 @@
 //
 
 #import "IVGUtils.h"
-#import "NSArray+IVGUtils.h"
-#import <QuartzCore/QuartzCore.h>
-
-NSArray* CGColorArray(NSArray *colors) {
-    return [colors arrayByTransforming:^(id color) {
-        return (id) [color CGColor];
-    }];
-}
+#import "NSString+IVGUtils.h"
 
 @implementation IVGUtils
 
@@ -44,10 +37,6 @@ NSArray* CGColorArray(NSArray *colors) {
 
 + (id) ifNil:(id) value use:(id) defaultValue {
     return value ? value : defaultValue;
-}
-
-+ (BOOL) haveValue:(NSString *) value {
-    return (value != nil) && ([value length] > 0);
 }
 
 + (void) showAlertViewTitle:(NSString *) title 

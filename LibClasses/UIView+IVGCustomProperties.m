@@ -8,10 +8,17 @@
 
 #import "UIView+IVGCustomProperties.h"
 #import <QuartzCore/QuartzCore.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import "NSObject+IVGUtils.h"
 #import "NSArray+IVGUtils.h"
 #import "UIColor+IVGUtils.h"
 #import "IVGUtils.h"
+
+NSArray* CGColorArray(NSArray *colors) {
+    return [colors arrayByTransforming:^(id color) {
+        return (id) [color CGColor];
+    }];
+}
 
 @interface UIView()
 @property (nonatomic,assign) BOOL original_backgroundView_set;

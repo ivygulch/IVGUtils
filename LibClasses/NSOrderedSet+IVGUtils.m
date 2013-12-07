@@ -1,23 +1,22 @@
 //
-//  NSSet+IVGUtils.m
-//  IVGUtils
+//  NSOrderedSet+IVGUtils.m
+//  MyFactor
 //
-//  Created by Douglas Sjoquist on 3/19/11.
-//  Copyright 2011 Ivy Gulch, LLC. All rights reserved.
+//  Created by Douglas Sjoquist on 12/6/12.
+//  Copyright (c) 2012 Ivy Gulch, LLC. All rights reserved.
 //
 
 #import "NSOrderedSet+IVGUtils.h"
-#import "NSArray+IVGUtils.h"
 
 @implementation NSOrderedSet (IVGUtils)
 
-- (NSArray *) randomizedArray {
-    return [[self array] arrayByRandomizing];
-}
-
-- (NSOrderedSet *) randomizedOrderedSet;
+- (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue;
 {
-    return [NSOrderedSet orderedSetWithArray:[self randomizedArray]];
+    if (index < [self count]) {
+        return [self objectAtIndex:index];
+    } else {
+        return outOfRangeValue;
+    }
 }
 
 @end

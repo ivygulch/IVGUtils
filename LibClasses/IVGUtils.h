@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-NSArray* CGColorArray(NSArray *colors);
-
 @interface IVGUtils : NSObject
 
 + (NSDateFormatter *) sharedDateFormatter;
@@ -17,7 +15,6 @@ NSArray* CGColorArray(NSArray *colors);
 + (NSDate *) dateFromString:(NSString *) value withFormat:(NSString *) format;
 
 + (id) ifNil:(id) value use:(id) defaultValue;
-+ (BOOL) haveValue:(NSString *) value;
 
 + (void) showAlertViewTitle:(NSString *) title 
                     message:(NSString *) message 
