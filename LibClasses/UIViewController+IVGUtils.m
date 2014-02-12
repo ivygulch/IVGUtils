@@ -64,4 +64,14 @@
     }
 }
 
+- (BOOL) isPortrait;
+{
+    return UIInterfaceOrientationIsPortrait(self.interfaceOrientation);
+}
+
+- (BOOL) isLandscape;
+{
+    return UIInterfaceOrientationIsLandscape(self.interfaceOrientation);
+}
+
 @end

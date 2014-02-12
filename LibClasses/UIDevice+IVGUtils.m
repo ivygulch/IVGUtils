@@ -76,11 +76,11 @@
 	return isRunningOniPad;
 }
 
-+ (BOOL) isPortrait {
++ (BOOL) isDevicePortrait {
     return UIDeviceOrientationIsPortrait([UIDevice deviceOrientation]);
 }
 
-+ (BOOL) isLandscape {
++ (BOOL) isDeviceLandscape {
     return UIDeviceOrientationIsLandscape([UIDevice deviceOrientation]);
 }
 

@@ -19,27 +19,47 @@
         [result addObject:[arrayCopy objectAtIndex:idx]];
         [arrayCopy removeObjectAtIndex:idx];
     }
-    return result;
+    return [result copy];
 }
 
 - (NSArray *) arrayByReversing {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
     NSEnumerator *enumerator = [self reverseObjectEnumerator];
     for (id element in enumerator) {
-        [array addObject:element];
+        [result addObject:element];
     }
-    return array;
+    return [result copy];
 }
 
 - (NSArray *) arrayByTransforming:(id(^)(id)) transformationBlock;
 {
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
     for (id originalValue in self) {
-        [array addObject:transformationBlock(originalValue)];
+        [result addObject:transformationBlock(originalValue)];
     }
-    return array;
+    return [result copy];
 }
 
+- (NSArray *) arrayByFiltering:(BOOL(^)(id)) filterBlock;
+{
+    NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
+    for (id originalValue in self) {
+        if (filterBlock(originalValue)) {
+            [result addObject:originalValue];
+        }
+    }
+    return [result copy];
+}
+
+- (BOOL) applyBlock:(BOOL(^)(id obj)) block;
+{
+    for (id value in self) {
+        if (!block(value)) {
+            return NO;
+        }
+    }
+    return YES;
+}
 
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue 
 {
@@ -89,7 +109,7 @@
     }
     va_end(args);
     
-    return result;
+    return [result copy];
 }
 
 @end

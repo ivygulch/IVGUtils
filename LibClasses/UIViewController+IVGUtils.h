@@ -24,4 +24,7 @@
 
 - (UIViewController *) actualTopViewController;
 
+- (BOOL) isPortrait;
+- (BOOL) isLandscape;
+
 @end
