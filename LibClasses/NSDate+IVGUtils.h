@@ -12,6 +12,7 @@ extern const NSTimeInterval oneDay;
 
 @interface NSDate (IVGUtils)
 
++ (NSDateFormatter *) sharedDateFormatter;
 + (NSDate *) dateFromString:(NSString *)string withFormat:(NSString *)format;
 + (NSDate *) dateFromString:(NSString *)string withFormat:(NSString *)format timeZone:(NSTimeZone *) timeZone;
 + (NSDate *) dateFromYear:(NSInteger) year month:(NSInteger) month day:(NSInteger) day hour:(NSInteger) hour minute:(NSInteger) minute second:(NSInteger) second;

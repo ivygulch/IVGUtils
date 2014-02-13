@@ -14,12 +14,17 @@
 
 - (BOOL) hasValue;
 
+- (BOOL) xmlBoolValue;
+
 - (NSString *) removeCharactersInSet:(NSCharacterSet *) characterSet;
 - (NSString *) trim;
 - (NSString *) trimAllLeading:(NSString *) value;
 - (NSString *) trimAllTrailing:(NSString *) value;
 - (NSString *) trimMatchingLeadingTrailing:(NSString *) value;
 
++ (NSString *) binaryStringWithInteger:(int32_t) x bitCount:(NSUInteger) bitCount leftPad:(BOOL) leftPad;
+
 - (BOOL) matches:(NSString *) searchText;
+- (NSString *) stringWithOnlyCharacters:(NSString *) validCharacters;
 
 @end

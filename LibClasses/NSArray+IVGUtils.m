@@ -122,4 +122,14 @@
     }
 }
 
+- (BOOL) addObject:(id)item ifBlock:(BOOL(^)(id obj)) ifBlock;
+{
+    BOOL result = NO;
+    if (ifBlock(item)) {
+        [self addObject:item];
+        result = YES;
+    }
+    return result;
+}
+
 @end

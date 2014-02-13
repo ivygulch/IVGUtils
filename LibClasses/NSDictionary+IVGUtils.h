@@ -12,6 +12,7 @@
 @interface NSDictionary (IVGUtils)
 
 - (CGRect) CGRectValue;
+- (id) nilableObjectForKey:(id) key;
 
 + (NSDictionary *) dictionaryWithCGRect:(CGRect) r;
 

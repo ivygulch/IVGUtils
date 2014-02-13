@@ -10,6 +10,8 @@
 
 @interface NSOrderedSet (IVGUtils)
 
+- (NSArray *) arrayByRandomizing;
+- (NSOrderedSet *) orderedSetByRandomizing;
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue;
 
 @end

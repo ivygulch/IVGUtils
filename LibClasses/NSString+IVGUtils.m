@@ -22,6 +22,11 @@
     return [self length] > 0;
 }
 
+- (BOOL) xmlBoolValue;
+{
+    return [[self lowercaseString] isEqualToString:@"true"];
+}
+
 - (NSString *) trimAllLeading:(NSString *) value;
 {
     NSUInteger lenValue = [value length];
@@ -82,9 +87,42 @@
     }
 }
 
++ (NSString *) binaryStringWithInteger:(int32_t) x bitCount:(NSUInteger) bitCount leftPad:(BOOL) leftPad;
+{
+    static char b[33];
+    b[0] = '\0';
+
+    uint32_t start = 1 << (bitCount-1);
+    BOOL everOn = NO;
+    for (uint32_t z = start; z > 0; z >>= 1)
+    {
+        BOOL on = (x & z) == z;
+        everOn |= on;
+        if (leftPad || everOn || (z == 1)) {
+            strcat(b, (on ? "1" : "0"));
+        }
+    }
+
+    return [NSString stringWithCString:b encoding:NSUTF8StringEncoding];
+}
+
 - (BOOL) matches:(NSString *) searchText;
 {
     return ([searchText length] == 0) || ([self rangeOfString:searchText options:NSCaseInsensitiveSearch].length > 0);
+}
+
+- (NSString *) stringWithOnlyCharacters:(NSString *) validCharacters;
+{
+    NSUInteger len = [self length];
+    NSMutableString *result = [NSMutableString stringWithCapacity:len];
+    for (NSUInteger idx=0; idx<len; idx++) {
+        NSString *c = [self substringWithRange:NSMakeRange(idx,1)];
+        NSRange r = [validCharacters rangeOfString:c];
+        if (r.length > 0) {
+            [result appendString:c];
+        }
+    }
+    return [NSString stringWithString:result];
 }
 
 @end

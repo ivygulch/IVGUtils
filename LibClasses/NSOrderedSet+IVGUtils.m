@@ -7,8 +7,18 @@
 //
 
 #import "NSOrderedSet+IVGUtils.h"
+#import "NSArray+IVGUtils.h"
 
 @implementation NSOrderedSet (IVGUtils)
+
+- (NSArray *) arrayByRandomizing {
+    return [[self array] arrayByRandomizing];
+}
+
+- (NSOrderedSet *) orderedSetByRandomizing;
+{
+    return [NSOrderedSet orderedSetWithArray:[self arrayByRandomizing]];
+}
 
 - (id) objectAtIndex:(NSUInteger) index outOfRange:(id) outOfRangeValue;
 {

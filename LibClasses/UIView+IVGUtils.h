@@ -55,6 +55,7 @@ typedef enum UIViewHorizontalAlignment UIViewHorizontalAlignment;
 - (CGRect) absoluteFrame;
 - (CGPoint) absoluteOrigin;
 - (void) removeAllSubviews;
+- (UIView *) findFirstResponder;
 
 + (void) updateFrame:(UIView *) view x:(CGFloat) x;
 + (void) updateFrame:(UIView *) view w:(CGFloat) w;
