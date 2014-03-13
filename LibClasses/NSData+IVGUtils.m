@@ -13,8 +13,8 @@
 -(NSString *) base64Encoding;
 {
     //Point to start of the data and set buffer sizes
-    int inLength = [self length];
-    int outLength = ((((inLength * 4)/3)/4)*4) + (((inLength * 4)/3)%4 ? 4 : 0);
+    NSInteger inLength = [self length];
+    NSInteger outLength = ((((inLength * 4)/3)/4)*4) + (((inLength * 4)/3)%4 ? 4 : 0);
     const char *inputBuffer = [self bytes];
     char *outputBuffer = malloc(outLength);
     outputBuffer[outLength] = 0;

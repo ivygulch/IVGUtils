@@ -62,6 +62,7 @@ static NSString *ASSOCIATED_USER_INFO_ASSOCOBJ_KEY = @"com.ivygulch.ASSOCIATED_U
 
 - (NSString *) debugId;
 {
+#if DEBUG
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
     if ([self respondsToSelector:@selector(shortDescription)]) {
@@ -70,6 +71,9 @@ static NSString *ASSOCIATED_USER_INFO_ASSOCOBJ_KEY = @"com.ivygulch.ASSOCIATED_U
         return [NSString stringWithFormat:@"%@<%p>", NSStringFromClass([self class]), self];
     }
 #pragma clang diagnostic pop
+#else
+    return [NSString stringWithFormat:@"%@<%p>", NSStringFromClass([self class]), self];
+#endif
 }
 
 - (id) asDictionaryKey;
