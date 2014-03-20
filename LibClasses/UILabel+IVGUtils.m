@@ -19,7 +19,10 @@
         NSDictionary *attributes = @{NSFontAttributeName:self.font};
         return [self.text sizeWithAttributes:attributes];
     } else {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         return [self.text sizeWithFont:self.font];
+#pragma GCC diagnostic pop
     }
 }
 
@@ -28,12 +31,15 @@
     if (RUNNING_ON_IOS7) {
         NSDictionary *attributes = @{NSFontAttributeName:self.font};
         CGRect rect = [text boundingRectWithSize:size
-                                              options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
-                                           attributes:attributes
-                                              context:nil];
+                                         options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                      attributes:attributes
+                                         context:nil];
         return rect.size;
     } else {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         return [text sizeWithFont:self.font constrainedToSize:size lineBreakMode:self.lineBreakMode];
+#pragma GCC diagnostic pop
     }
 }
 
@@ -68,7 +74,7 @@
     self.lineBreakMode = lineBreakMode;
     self.text = text;
     [self sizeToFit];
-    
+
     // sizeToFit will also change the width, change it back since if the label is used again
     // (like in a table view cell), the starting point for the next time will be wrong
     self.frame = (CGRect){self.frame.origin,{originalSize.width,self.bounds.size.height}};
