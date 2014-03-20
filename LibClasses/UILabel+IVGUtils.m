@@ -19,7 +19,10 @@
         NSDictionary *attributes = @{NSFontAttributeName:self.font};
         return [self.text sizeWithAttributes:attributes];
     } else {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         return [self.text sizeWithFont:self.font];
+#pragma GCC diagnostic pop
     }
 }
 
@@ -33,7 +36,10 @@
                                               context:nil];
         return rect.size;
     } else {
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         return [text sizeWithFont:self.font constrainedToSize:size lineBreakMode:self.lineBreakMode];
+#pragma GCC diagnostic pop
     }
 }
 
