@@ -9,24 +9,49 @@
 //
 
 #import "UILabel+IVGUtils.h"
+#import "UIDevice+IVGUtils.h"
 
 @implementation UILabel(IVGUtils)
 
+- (CGSize) calculateFontSize:(UIFont *) font;
+{
+    if (RUNNING_ON_IOS7) {
+        NSDictionary *attributes = @{NSFontAttributeName:self.font};
+        return [self.text sizeWithAttributes:attributes];
+    } else {
+        return [self.text sizeWithFont:self.font];
+    }
+}
+
+- (CGSize) calculateConstrainedToSizeWithText:(NSString *) text font:(UIFont *) font size:(CGSize) size;
+{
+    if (RUNNING_ON_IOS7) {
+        NSDictionary *attributes = @{NSFontAttributeName:self.font};
+        CGRect rect = [text boundingRectWithSize:size
+                                              options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                           attributes:attributes
+                                              context:nil];
+        return rect.size;
+    } else {
+        return [text sizeWithFont:self.font constrainedToSize:size lineBreakMode:self.lineBreakMode];
+    }
+}
+
 - (void)alignTop {
-    CGSize fontSize = [self.text sizeWithFont:self.font];
+    CGSize fontSize = [self calculateFontSize:self.font];
     double finalHeight = fontSize.height * self.numberOfLines;
     double finalWidth = self.frame.size.width;    //expected width of label
-    CGSize theStringSize = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(finalWidth, finalHeight) lineBreakMode:self.lineBreakMode];
+    CGSize theStringSize = [self calculateConstrainedToSizeWithText:self.text font:self.font size:CGSizeMake(finalWidth, finalHeight)];
     int newLinesToPad = (finalHeight  - theStringSize.height) / fontSize.height;
     for(int i=0; i<newLinesToPad; i++)
         self.text = [self.text stringByAppendingString:@"\n "];
 }
 
 - (void)alignBottom {
-    CGSize fontSize = [self.text sizeWithFont:self.font];
+    CGSize fontSize = [self calculateFontSize:self.font];
     double finalHeight = fontSize.height * self.numberOfLines;
     double finalWidth = self.frame.size.width;    //expected width of label
-    CGSize theStringSize = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(finalWidth, finalHeight) lineBreakMode:self.lineBreakMode];
+    CGSize theStringSize = [self calculateConstrainedToSizeWithText:self.text font:self.font size:CGSizeMake(finalWidth, finalHeight)];
     int newLinesToPad = (finalHeight  - theStringSize.height) / fontSize.height;
     for(int i=0; i<newLinesToPad; i++)
         self.text = [NSString stringWithFormat:@" \n%@",self.text];
@@ -35,7 +60,7 @@
 - (void)setText:(NSString *) text adjustHeightUsingLineBreakMode:(NSLineBreakMode) lineBreakMode {
     // calculate new size, but all we really want is the height
     CGSize originalSize = self.bounds.size;
-    CGSize newSize = [text sizeWithFont:self.font constrainedToSize:originalSize lineBreakMode:lineBreakMode];
+    CGSize newSize = [self calculateConstrainedToSizeWithText:text font:self.font size:originalSize];
 
     // reset the existing frame to newly calculated size and ask label to sizeToFit
     self.frame = (CGRect){self.frame.origin,{self.bounds.size.width,newSize.height}};

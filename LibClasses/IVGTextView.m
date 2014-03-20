@@ -9,6 +9,7 @@
 #import "IVGTextView.h"
 #import "NSArray+IVGUtils.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIDevice+IVGUtils.h"
 
 #define DEFAULT_PLACEHOLDER_COLOR [UIColor colorWithWhite:0.702f alpha:1.0f]
 
@@ -126,7 +127,12 @@
             [self.placeholderColor set];
         }
         UIFont *useFont = (self.placeholderFont == nil) ? self.font : self.placeholderFont;
-        [self.placeholder drawInRect:CGRectMake(8.0f, 8.0f, self.frame.size.width - 16.0f, self.frame.size.height - 16.0f) withFont:useFont];
+        if (RUNNING_ON_IOS7) {
+            NSDictionary *attributes = @{NSFontAttributeName:useFont};
+            [self.placeholder drawInRect:CGRectMake(8.0f, 8.0f, self.frame.size.width - 16.0f, self.frame.size.height - 16.0f) withAttributes:attributes];
+        } else {
+            [self.placeholder drawInRect:CGRectMake(8.0f, 8.0f, self.frame.size.width - 16.0f, self.frame.size.height - 16.0f) withFont:useFont];
+        }
     }
 }
 

@@ -8,6 +8,9 @@
 
 #import "NSDate+IVGUtils.h"
 
+// temporary kluge to work around "NSCalendarUnitWeekday not defined" weirdness when building directly to device
+#define NSCalendarUnitWeekday ((NSCalendarUnit) kCFCalendarUnitWeekday)
+
 const NSTimeInterval oneDay = (24.0*60.0*60.0);
 
 @implementation NSDate (IVGUtils)

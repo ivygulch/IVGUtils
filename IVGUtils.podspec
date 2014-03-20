@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "IVGUtils"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Miscellaneous helper routines for iOS"
   s.homepage     = "https://github.com/ivygulch/IVGUtils"
   s.license      = { :type => 'MIT', :file => 'LICENSE'}
