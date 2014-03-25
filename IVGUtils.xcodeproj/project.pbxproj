@@ -24,6 +24,8 @@
 		F89CA33B16C9A52400916F42 /* NSDictionary+IVGUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F89CA33A16C9A52400916F42 /* NSDictionary+IVGUtilsTest.m */; };
 		F8B365801335503300878CB2 /* NSArray+IVGUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B3657F1335503300878CB2 /* NSArray+IVGUtilsTest.m */; };
 		F8B9EB421336D0FA0087EE88 /* UIDevice+IVGUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B9EB3F1336D09B0087EE88 /* UIDevice+IVGUtilsTest.m */; };
+		F8DB0D9B18E222E8000D986B /* IVGClock.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DB0D9918E222E8000D986B /* IVGClock.h */; };
+		F8DB0D9C18E222E8000D986B /* IVGClock.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DB0D9A18E222E8000D986B /* IVGClock.m */; };
 		F8E77E8B1756612E00A4B4EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E77E8A1756612E00A4B4EB /* QuartzCore.framework */; };
 		F8E77E8C1756616600A4B4EB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E77E8A1756612E00A4B4EB /* QuartzCore.framework */; };
 		F8E79BAF1853ADEC00B9A1EB /* IVGBlockMap.h in Headers */ = {isa = PBXBuildFile; fileRef = F8E79B6A1853ADEC00B9A1EB /* IVGBlockMap.h */; };
@@ -123,6 +125,8 @@
 		F89CA33A16C9A52400916F42 /* NSDictionary+IVGUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+IVGUtilsTest.m"; sourceTree = "<group>"; };
 		F8B3657F1335503300878CB2 /* NSArray+IVGUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+IVGUtilsTest.m"; sourceTree = "<group>"; };
 		F8B9EB3F1336D09B0087EE88 /* UIDevice+IVGUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+IVGUtilsTest.m"; sourceTree = "<group>"; };
+		F8DB0D9918E222E8000D986B /* IVGClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IVGClock.h; sourceTree = "<group>"; };
+		F8DB0D9A18E222E8000D986B /* IVGClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IVGClock.m; sourceTree = "<group>"; };
 		F8E05E6012E676A3008C09E5 /* RunTests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = RunTests.sh; sourceTree = "<group>"; };
 		F8E0602312E6822D008C09E5 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
 		F8E0602712E68242008C09E5 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GHUnitIOS.framework; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 				F8E79BAC1853ADEC00B9A1EB /* UIView+IVGUtils.m */,
 				F8E79BAD1853ADEC00B9A1EB /* UIViewController+IVGUtils.h */,
 				F8E79BAE1853ADEC00B9A1EB /* UIViewController+IVGUtils.m */,
+				F8DB0D9918E222E8000D986B /* IVGClock.h */,
+				F8DB0D9A18E222E8000D986B /* IVGClock.m */,
 			);
 			path = LibClasses;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 				F8E79BDA1853ADEC00B9A1EB /* NSSet+IVGUtils.h in Headers */,
 				F8E79BE21853ADEC00B9A1EB /* UIDevice+IVGUtils.h in Headers */,
 				F8E79BB11853ADEC00B9A1EB /* IVGDebug.h in Headers */,
+				F8DB0D9B18E222E8000D986B /* IVGClock.h in Headers */,
 				F8E79BCC1853ADEC00B9A1EB /* NSArray+IVGUtils.h in Headers */,
 				F8E79BC61853ADEC00B9A1EB /* IVGTypeMap.h in Headers */,
 				F8E79BC41853ADEC00B9A1EB /* IVGTextView.h in Headers */,
@@ -539,6 +546,7 @@
 				F8E79BE51853ADEC00B9A1EB /* UIImage+IVGUtils.m in Sources */,
 				F8E79BD91853ADEC00B9A1EB /* NSOrderedSet+IVGUtils.m in Sources */,
 				F8E79BF31853ADEC00B9A1EB /* UIViewController+IVGUtils.m in Sources */,
+				F8DB0D9C18E222E8000D986B /* IVGClock.m in Sources */,
 				F8E79BB31853ADEC00B9A1EB /* IVGGradientButton.m in Sources */,
 				F8E79BC71853ADEC00B9A1EB /* IVGTypeMap.m in Sources */,
 				F8E79BC91853ADEC00B9A1EB /* IVGUtils.m in Sources */,
