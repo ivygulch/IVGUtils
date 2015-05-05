@@ -76,6 +76,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F88D28AD1AF95B040082972F /* IVGUtils.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = IVGUtils.podspec; sourceTree = SOURCE_ROOT; };
+		F88D28AE1AF95B220082972F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		F890C2BC19701B7D00262B19 /* libIVGUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libIVGUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F890C2BF19701B7D00262B19 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F890C2C319701B7D00262B19 /* IVGUtils-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IVGUtils-Prefix.pch"; sourceTree = "<group>"; };
@@ -225,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				F890C2C319701B7D00262B19 /* IVGUtils-Prefix.pch */,
+				F88D28AD1AF95B040082972F /* IVGUtils.podspec */,
+				F88D28AE1AF95B220082972F /* LICENSE */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
