@@ -14,6 +14,5 @@ typedef void (^IVGHTMLReturnBlock)(NSURL *url, NSString *idToExtract, NSString *
 
 - (void) extractId:(NSString *) idToExtract fromURL:(NSURL *) url withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
 - (void) extractId:(NSString *) idToExtract fromHTML:(NSString *) html withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
-- (void) extractId:(NSString *) idToExtract fromData:(NSData *) data withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
 
 @end
