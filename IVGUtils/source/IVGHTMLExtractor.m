@@ -53,6 +53,13 @@
     [webView loadHTMLString:html baseURL:nil];
 }
 
+- (void) extractId:(NSString *) idToExtract fromData:(NSData *) data withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
+{
+    UIWebView *webView = [self newExtractionWebViewWithExtractId:idToExtract returnBlock:returnBlock];
+    NSURL *url = [NSURL URLWithString:@"http://localhost"];
+    [webView loadData:data MIMEType:@"text/html" textEncodingName:@"utf-8" baseURL:url];
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView;
 {
     NSURL *url = [[webView request] URL];
