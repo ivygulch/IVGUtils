@@ -383,7 +383,7 @@
 		F890C2B419701B7D00262B19 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Ivy Gulch";
 			};
 			buildConfigurationList = F890C2B719701B7D00262B19 /* Build configuration list for PBXProject "IVGUtils" */;
@@ -507,6 +507,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -521,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -552,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -585,11 +586,6 @@
 		F890C2E319701B7E00262B19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IVGUtils/IVGUtils-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -604,6 +600,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ivygulch.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -612,11 +609,6 @@
 		F890C2E419701B7E00262B19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IVGUtils/IVGUtils-Prefix.pch";
 				INFOPLIST_FILE = "IVGUtilsTests/IVGUtilsTests-Info.plist";
@@ -627,6 +619,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ivygulch.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
