@@ -13,6 +13,8 @@
 
 - (CGRect) CGRectValue;
 - (id) nilableObjectForKey:(id) key;
+- (id) nilableObjectMatchingKey:(id) matchingPattern;
+- (id) anyNilableObject;
 
 + (NSDictionary *) dictionaryWithCGRect:(CGRect) r;
 

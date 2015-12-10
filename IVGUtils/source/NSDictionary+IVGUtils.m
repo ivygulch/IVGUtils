@@ -30,6 +30,25 @@
     return result;
 }
 
+- (id) nilableObjectMatchingKey:(id) matchingPattern;
+{
+    NSArray *sortedKeys = [[self allKeys] sortedArrayUsingComparator:^NSComparisonResult(NSString *key1, NSString *key2) {
+        return [key1 compare:key2];
+    }];
+    for (NSString *key in sortedKeys) {
+        if ([key matches:matchingPattern]) {
+            return [self nilableObjectForKey:key];
+        }
+    }
+    return nil;
+}
+
+- (id) anyNilableObject;
+{
+    id key = [[self allKeys] firstObject];
+    return [self nilableObjectForKey:key];
+}
+
 + (NSDictionary *) dictionaryWithCGRect:(CGRect) r;
 {
     return [NSDictionary dictionaryWithDictionary:CFBridgingRelease(CGRectCreateDictionaryRepresentation(r))];
