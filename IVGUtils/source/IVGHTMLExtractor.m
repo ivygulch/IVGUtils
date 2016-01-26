@@ -50,7 +50,8 @@
 - (void) extractId:(NSString *) idToExtract fromHTML:(NSString *) html withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
 {
     UIWebView *webView = [self newExtractionWebViewWithExtractId:idToExtract returnBlock:returnBlock];
-    [webView loadHTMLString:html baseURL:nil];
+    NSURL *url = [NSURL URLWithString:@"http://localhost"];
+    [webView loadHTMLString:html baseURL:url];
 }
 
 - (void) extractId:(NSString *) idToExtract fromData:(NSData *) data withReturnBlock:(IVGHTMLReturnBlock) returnBlock;
