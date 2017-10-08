@@ -72,7 +72,7 @@ const NSTimeInterval oneDay = (24.0*60.0*60.0);
 
 - (NSDate *) dateWithYear:(NSNumber *) year month:(NSNumber *) month day:(NSNumber *) day hour:(NSNumber *) hour minute:(NSNumber *) minute second:(NSNumber *) second;
 {
-    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit|NSHourCalendarUnit|NSMinuteCalendarUnit|NSSecondCalendarUnit) fromDate:self];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond) fromDate:self];
     if (year != nil) {
         dateComponents.year = [year integerValue];
     }
@@ -120,13 +120,13 @@ const NSTimeInterval oneDay = (24.0*60.0*60.0);
 
 - (NSDate *) dateWithZeroTime;
 {
-    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit) fromDate:self];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay) fromDate:self];
     return [[NSCalendar currentCalendar] dateFromComponents:dateComponents];
 }
 
 - (NSInteger) year;
 {
-    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:(NSYearCalendarUnit) fromDate:self];
+    NSDateComponents *dateComponents = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear) fromDate:self];
     return dateComponents.year;
 }
 
@@ -229,19 +229,19 @@ const NSTimeInterval oneDay = (24.0*60.0*60.0);
 
 - (NSDateComponents *) allComponents;
 {
-    NSUInteger flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSUInteger flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     return [[NSCalendar currentCalendar] components:flags fromDate:self];
 }
 
 - (NSDateComponents *) dateComponents;
 {
-    NSUInteger flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+    NSUInteger flags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
     return [[NSCalendar currentCalendar] components:flags fromDate:self];
 }
 
 - (NSDateComponents *) timeComponents;
 {
-    NSUInteger flags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSUInteger flags = NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
     return [[NSCalendar currentCalendar] components:flags fromDate:self];
 }
 
